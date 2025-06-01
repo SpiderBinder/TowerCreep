@@ -2,7 +2,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#include "GameObject.h"
+#include "Game.h"
 
 int main()
 {
@@ -12,6 +12,13 @@ int main()
     sf::RenderWindow window(sf::VideoMode({1080, 720}), "TowerCreep");
     //window.setFrameRate(60);
     window.setKeyRepeatEnabled(false);
+
+    Game game = Game(window);
+
+    if (!game.init())
+    {
+        return;
+    }
 
     while (window.isOpen())
     {
@@ -29,12 +36,12 @@ int main()
                 }
             } */
 
-            // Input code
+            // Input event checking
         }
 
         window.clear(sf::Color::Cyan);
         
-        
+        game.render();
 
         window.display();
     }
