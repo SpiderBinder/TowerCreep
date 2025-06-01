@@ -15,8 +15,26 @@ FetchContent_MakeAvailable(SFML)
 
 set(SOURCE_FILES 
     src/main.cpp 
-    src/GameObject.h 
-    src/GameObject.cpp )
+    src/Game.h 
+    src/Game.cpp 
+    src/Menu.h 
+    src/Menu.cpp 
+    
+    src/Objects/GameObject.h 
+    src/Objects/GameObject.cpp 
+    src/Objects/Entity.h 
+    src/Objects/Entity.cpp 
+    src/Objects/Player.h 
+    src/Objects/Player.cpp 
+    
+    src/Environment/Chunk.h 
+    src/Environment/Chunk.cpp 
+    src/Environment/Level.h 
+    src/Environment/Level.cpp 
+    src/Environment/Tower.h 
+    src/Environment/Tower.cpp 
+    src/Environment/Hub.h 
+    src/Environment/Hub.cpp )
 add_executable(TowerCreep ${SOURCE_FILES})
 
 target_link_libraries(TowerCreep PRIVATE SFML::Graphics SFML::Audio)
