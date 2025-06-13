@@ -4,14 +4,20 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Objects/GameObject.h"
+
 class Game
 {
 private:
     // Rendering
     sf::RenderWindow& window;
+    sf::Texture test_texture;
+
+    GameObject* test_object = nullptr;
 
 public:
     Game(sf::RenderWindow& game_window);
+    ~Game();
 
     bool init();
     void update(float dt);

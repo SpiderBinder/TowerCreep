@@ -17,7 +17,7 @@ int main()
 
     if (!game.init())
     {
-        return;
+        return -1;
     }
 
     while (window.isOpen())
