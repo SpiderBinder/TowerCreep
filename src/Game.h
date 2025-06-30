@@ -2,8 +2,10 @@
 #ifndef TOWERCREEP_GAME_H
 #define TOWERCREEP_GAME_H
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
+#include "Environment/Level.h"
 #include "Objects/GameObject.h"
 
 class Game
@@ -13,7 +15,7 @@ private:
     sf::RenderWindow& window;
     sf::Texture test_texture;
 
-    GameObject* test_object = nullptr;
+    Level* test_level = nullptr;
 
 public:
     Game(sf::RenderWindow& game_window);

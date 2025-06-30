@@ -13,6 +13,8 @@ int main()
     //window.setFrameRate(60);
     window.setKeyRepeatEnabled(false);
 
+    sf::Clock clock;
+
     Game game = Game(window);
 
     if (!game.init())
@@ -22,6 +24,9 @@ int main()
 
     while (window.isOpen())
     {
+        sf::Time time = clock.restart();
+        float dt = time.asSeconds();
+
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())
@@ -38,6 +43,7 @@ int main()
 
             // Input event checking
         }
+        game.update(dt);
 
         window.clear(sf::Color::Cyan);
         
